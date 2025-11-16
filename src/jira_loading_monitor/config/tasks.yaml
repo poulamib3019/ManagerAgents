@@ -1,0 +1,37 @@
+check_sprint_loading:
+  description: >
+    Check the active sprint board in Jira and verify that each Project Team member has exactly
+    9 story points assigned per sprint. Analyze the current sprint board, identify all team members,
+    count story points per member, and flag any discrepancies. Create detailed tasks for generating
+    individual reports on story loading for each team member in the active sprint.
+  expected_output: >
+    A detailed analysis report containing:
+    1. List of all team members in the active sprint
+    2. Story points assigned to each team member
+    3. Verification status (whether each member has 9 story points)
+    4. Individual report generation tasks for each team member
+    5. Any discrepancies or issues found
+  agent: jira_loading
+
+generate_sprint_reports:
+  description: >
+    Generate comprehensive reports on story loading for each team member in the active sprint.
+    The report should include: team member name, total story points assigned, breakdown of stories,
+    sprint goals, completion status, and any loading concerns. Format the report professionally
+    and prepare it for delivery via Microsoft Teams.
+  expected_output: >
+    A comprehensive sprint loading report document ready for Teams delivery, containing individual
+    reports for each team member with their story loading details, formatted clearly with all
+    relevant sprint information.
+  agent: reporting_analyst
+
+send_teams_report:
+  description: >
+    Send the generated sprint loading report via Microsoft Teams chat to bala.poulami@outlook.com.
+    Ensure the report is properly formatted and includes all relevant information about story loading
+    for each team member in the active sprint. Verify the delivery was successful.
+  expected_output: >
+    Confirmation that the sprint loading report has been successfully sent to bala.poulami@outlook.com
+    via Microsoft Teams chat, along with delivery timestamp and any relevant status information.
+  agent: reporting_analyst
+
